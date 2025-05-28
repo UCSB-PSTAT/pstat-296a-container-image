@@ -4,7 +4,12 @@ LABEL maintainer="LSIT Systems <lsitops@ucsb.edu>"
 
 USER root
 
-RUN R -e "install.packages(c('rmarkdown','fitdistrplus','readxl','actuar','DataCombine'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
+RUN conda install -y -c conda-forge \
+    r-rmarkdown\
+    r-fitdistrplus\
+    r-readxl\
+    r-actuar\
+    r::r-datacombine
 
 # Disable downloads from JupyterHub. 
 RUN jupyter labextension disable @jupyterlab/docmanager-extension:download ; \
