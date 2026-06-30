@@ -1,3 +1,2 @@
 # Container image source for PSTAT-296
-Info here about where to find and run this image.
-
+You can get the latest version of this image by running `podman pull ucsb/pstat-296:latest`
