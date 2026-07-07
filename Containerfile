@@ -11,7 +11,7 @@ RUN conda install -y -c conda-forge \
     r-actuar
 
 # Install from GitHub to avoid R Downgrade:
-RUN R -e "devtools::install_github('christophergandrud/DataCombine', Ncpus = parallel::detectCores())"
+RUN R -e "pak::pak('christophergandrud/DataCombine')"
 
 # Disable downloads from JupyterHub. 
 RUN jupyter labextension disable @jupyterlab/docmanager-extension:download ; \
